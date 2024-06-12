@@ -1,0 +1,4 @@
+# Typescript
+ts-services/auth-service/node_modules/
+ts-services/auth-service/dist/
+ts-services/auth-service/.env
