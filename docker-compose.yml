@@ -1,0 +1,17 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  ts-services:
+    build: ./ts-services
+    ports:
+      - "3000:3000"
+    depends_on:
+      - py-services
+      - go-services
+      - rs-services
+    working_dir: /usr/src/app/ts-services
+
+networks:
+  default:
+    name: socialfi-extension-api-v2
