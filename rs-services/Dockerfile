@@ -9,8 +9,8 @@ COPY . .
 # build
 RUN cargo install --path .
 
-# use a smaller base image for the runtime
-FROM debian:buster-slim
+# use a smaller base image for the runtime (with a compatible glibc version)
+FROM debian:bookworm-slim
 
 # set working directory for runtime stage
 WORKDIR /usr/local/bin

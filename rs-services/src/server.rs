@@ -13,7 +13,7 @@ async fn main() {
     let router = Router::new()
         .push(Router::new().path("").get(run_salvo));
 
-    let acceptor = TcpListener::new("0.0.0.0:3002").bind().await;
+    let acceptor = TcpListener::new("0.0.0.0:5000").bind().await;
     Server::new(acceptor).serve(router).await;
 }
 

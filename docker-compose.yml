@@ -7,6 +7,7 @@ services:
     working_dir: /usr/src/app/ts-services
     depends_on:
       - py-services-prod
+      - rs-services-prod
     env_file:
       - .env
   
@@ -15,6 +16,14 @@ services:
     ports:
       - "8000:8000"
     working_dir: /usr/src/app/py-services
+    env_file:
+      - .env
+  
+  rs-services-prod:
+    build: ./rs-services
+    ports:
+      - "5000:5000"
+    working_dir: /usr/src/app/rs-services
     env_file:
       - .env
 

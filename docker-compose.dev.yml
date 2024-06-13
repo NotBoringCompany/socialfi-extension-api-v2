@@ -22,6 +22,16 @@ services:
     env_file:
       - .env
 
+  rs-services-dev:
+    build: ./rs-services
+    ports:
+      - "5001:5000"
+    working_dir: /usr/src/app/rs-services
+    volumes:
+      - ./rs-services:/usr/src/app/rs-services
+    env_file:
+      - .env
+
 networks:
   dev-network:
     name: socialfi-extension-api-dev-network
