@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Function to show usage
 show_usage() {
   echo "Usage: $0 {build-prod|up-prod|build-dev|up-dev|down-prod|down-dev|build-and-up-prod|build-and-up-dev}"
   echo "Commands:"
@@ -14,16 +13,16 @@ show_usage() {
   echo "  build-and-up-dev  Build and start the development Docker images"
 }
 
-# Check if arguments are provided
+# call `show_usage()` if 0 or more than 1 arguments are provided
 if [ "$#" -ne 1 ]; then
   show_usage
   exit 1
 fi
 
-# Assign argument to variable
+# set command from the first argument
 COMMAND=$1
 
-# Set Docker Compose files based on the command
+# run compose commands based on the command
 case $COMMAND in
   build-prod)
     COMPOSE_FILES="-f docker-compose.yml"
