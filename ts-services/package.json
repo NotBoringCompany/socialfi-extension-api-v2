@@ -1,11 +1,12 @@
 {
   "name": "ts-services",
   "version": "1.0.0",
-  "description": "",
+  "description": "TypeScript service for socialfi-extension-api-v2",
   "main": "dist/server.js",
   "scripts": {
-    "start": "node dist/server.js",
     "build": "tsc",
+    "start": "node dist/server.js",
+    "start:dev": "npx ts-node src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
