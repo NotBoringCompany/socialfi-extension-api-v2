@@ -63,8 +63,8 @@ case $COMMAND in
         docker-compose $COMPOSE_FILES run --rm ts-services npm run build
         docker-compose $COMPOSE_FILES up --build
         ;;
-  *)
-    show_usage
-    exit 1
-    ;;
+    *)
+        show_usage
+        exit 1
+        ;;
 esac
