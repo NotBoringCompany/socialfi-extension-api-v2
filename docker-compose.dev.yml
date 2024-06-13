@@ -1,0 +1,23 @@
+#docker-compose.dev.yml
+services:
+  ts-services-dev:
+    build: ./ts-services
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./ts-services:/usr/src/app/ts-services
+    working_dir: /usr/src/app/ts-services
+    depends_on:
+      - py-services-dev
+
+  py-services-dev:
+    build: ./py-services
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./py-services:/usr/src/app/py-services
+    working_dir: /usr/src/app/py-services
+
+networks:
+  dev-network:
+    name: socialfi-extension-api-dev-network

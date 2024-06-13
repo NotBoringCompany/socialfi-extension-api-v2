@@ -1,19 +1,19 @@
 # docker-compose.yml
 services:
-  ts-services:
+  ts-services-prod:
     build: ./ts-services
     ports:
       - "3000:3000"
     depends_on:
-      - py-services
+      - py-services-prod
     working_dir: /usr/src/app/ts-services
   
-  py-services:
+  py-services-prod:
     build: ./py-services
     ports:
       - "8000:8000"
     working_dir: /usr/src/app/py-services
 
 networks:
-  default:
-    name: socialfi-extension-api-v2
+  prod-network:
+    name: socialfi-extension-api-prod-network
