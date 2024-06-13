@@ -4,15 +4,19 @@ services:
     build: ./ts-services
     ports:
       - "3000:3000"
+    working_dir: /usr/src/app/ts-services
     depends_on:
       - py-services-prod
-    working_dir: /usr/src/app/ts-services
+    env_file:
+      - .env
   
   py-services-prod:
     build: ./py-services
     ports:
       - "8000:8000"
     working_dir: /usr/src/app/py-services
+    env_file:
+      - .env
 
 networks:
   prod-network:

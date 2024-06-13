@@ -4,19 +4,23 @@ services:
     build: ./ts-services
     ports:
       - "3001:3000"
-    volumes:
-      - ./ts-services:/usr/src/app/ts-services
     working_dir: /usr/src/app/ts-services
     depends_on:
       - py-services-dev
+    volumes:
+      - ./ts-services:/usr/src/app/ts-services
+    env_file:
+      - .env
 
   py-services-dev:
     build: ./py-services
     ports:
       - "8001:8000"
+    working_dir: /usr/src/app/py-services
     volumes:
       - ./py-services:/usr/src/app/py-services
-    working_dir: /usr/src/app/py-services
+    env_file:
+      - .env
 
 networks:
   dev-network:
