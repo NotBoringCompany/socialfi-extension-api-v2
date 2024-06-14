@@ -1,6 +1,7 @@
 # docker-compose.yml
 services:
   ts-services-prod:
+    container_name: ts-services-prod
     build: ./ts-services
     ports:
       - "3000:3000"
@@ -12,6 +13,7 @@ services:
       - .env
   
   py-services-prod:
+    container_name: py-services-prod
     build: ./py-services
     ports:
       - "8000:8000"
@@ -20,10 +22,20 @@ services:
       - .env
   
   rs-services-prod:
+    container_name: rs-services-prod
     build: ./rs-services
     ports:
       - "5000:5000"
     working_dir: /usr/src/app/rs-services
+    env_file:
+      - .env
+
+  go-services-prod:
+    container_name: go-services-prod
+    build: ./go-services
+    ports:
+      - "7000:7000"
+    working_dir: /usr/src/app/go-services
     env_file:
       - .env
 
