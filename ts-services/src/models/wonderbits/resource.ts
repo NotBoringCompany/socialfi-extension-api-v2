@@ -4,48 +4,30 @@
 export interface Resource {
     /** the type of resource */
     type: ResourceType;
+    /** 
+     * the amount of resource 
+     * 
+     * used in instances that require amount, such as for rewards or in the inventory.
+     */
+    amount: number;
     /** the resource line */
-    line: ResourceLine;
+    line?: ResourceLine;
     /** the rarity of the resource */
-    rarity: ResourceRarity;
-    /** the weight of 1 of this resource (singular weight) */
-    weight: number;
-}
-
-/**
- * Represents a simplified resource with an amount of that resource.
- * 
- * Used primarily for functions that require a resource as a parameter but don't need the full resource object.
- */
-export interface SimplifiedResource {
-    /** the type of resource */
-    type: ResourceType;
-    /** the amount of the resource */
-    amount: number;
-}
-
-/**
- * Represents a resource with an amount of that resource.
- * 
- * Used primarily in claimable resources and the user's inventory.
- * 
- * Cumulative weight is not calculated here.
- */
-export interface ExtendedResource extends Resource {
-    /** the amount of this resource */
-    amount: number;
+    rarity?: ResourceRarity;
     /** 
      * the origin of this resource. 
      * 
      * mostly used when claiming resources to check whether the origin is a bonus resource or rather gathered normally. 
      */
-    origin: ExtendedResourceOrigin;
+    origin?: ResourceOrigin;
+    /** the weight of 1 of this resource (singular weight) */
+    weight?: number;
 }
 
 /**
  * Lists all possible origins of a resource.
  */
-export enum ExtendedResourceOrigin {
+export enum ResourceOrigin {
     NORMAL = 'Normal',
     BONUS = 'Bonus',
 }

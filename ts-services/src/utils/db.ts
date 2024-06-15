@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { UserSchema } from '../schema/User';
 
 const wonderbitsMongoURI = process.env.WONDERBITS_MONGO_URI!;
 const wonderverseMongoURI = process.env.WONDERVERSE_MONGO_URI!;

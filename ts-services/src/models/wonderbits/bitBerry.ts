@@ -23,7 +23,7 @@ export interface XBitBerryData {
  */
 export interface ExtendedXBitBerryData {
     /** the number of xBitBerries obtained from this source */
-    xBitBerries: number;
+    amount: number;
     /** the source of the xBitBerries */
     source: XBitBerrySource;
 }

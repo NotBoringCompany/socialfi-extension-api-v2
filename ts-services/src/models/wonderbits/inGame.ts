@@ -9,7 +9,7 @@ import { UserTutorialData } from './tutorial';
 /**
  * Represents the in-game data for Wonderbits for the user.
  */
-export interface InGameData {
+export interface WonderbitsData {
     /** the user's inventory for Wonderbits */
     inventory: Inventory;
     /** the user's level */

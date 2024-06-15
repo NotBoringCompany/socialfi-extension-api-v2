@@ -1,6 +1,6 @@
 import { XBitBerryData } from './bitBerry';
 import { Item } from './item';
-import { ExtendedResource } from './resource';
+import { Resource } from './resource';
 
 /**
  * Represents a user's inventory in Wonderbits.
@@ -16,7 +16,7 @@ export interface Inventory {
      */
     xBitBerryData: XBitBerryData;
     /** a list of resources owned */
-    resources: ExtendedResource[];
+    resources: Resource[];
     /** a list of items owned (includes food, bit orbs, terra caps, etc.) */
     items: Item[];
     /** the owned raft ID */

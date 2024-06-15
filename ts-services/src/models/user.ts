@@ -1,6 +1,6 @@
 import { Inventory } from './wonderbits/inventory';
 import { WalletData } from './web3';
-import { InGameData } from './wonderbits/inGame';
+import { WonderbitsData } from './wonderbits/inGame';
 
 /**
  * Represents a user's account data for Wonderverse.
@@ -17,7 +17,7 @@ export interface User {
     /** the user's wallet data, created when the user signs up for the first time */
     walletData: WalletData;
     /** the user's in-game data for Wonderbits */
-    inGameData: InGameData;
+    wonderbitsData: WonderbitsData;
 }
 
 /**
