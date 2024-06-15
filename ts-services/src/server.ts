@@ -9,7 +9,8 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-const mongoUri = process.env.MONGO_URI!;
+const wonderbitsMongoURI = process.env.WONDERBITS_MONGO_URI!;
+const wonderverseMongoURI = process.env.WONDERVERSE_MONGO_URI!;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -28,5 +29,6 @@ app.use(passport.session());
 app.listen(port, async () => {
     console.log(`Server running on port ${port}`);
 
-    await mongoose.connect(mongoUri);
+    await mongoose.connect(wonderbitsMongoURI);
+    await mongoose.connect(wonderverseMongoURI);
 });
