@@ -1,6 +1,6 @@
 import passport from 'passport';
 import { ProfileWithMetaData, Strategy as TwitterStrategy } from '@superfaceai/passport-twitter-oauth2';
-import { ExtendedTwitterProfile } from '../utils/customProfiles';
+import { ExtendedXProfile } from '../utils/customProfiles';
 
 passport.use(new TwitterStrategy(
     {
@@ -35,7 +35,7 @@ passport.use(new TwitterStrategy(
 
 // minimal serialization; our extension uses JWT token for session management and passport only as a requirement for twitter's oauth2 from superfaceai
 passport.serializeUser((user, done) => {
-    done(null, (user as ExtendedTwitterProfile).id);
+    done(null, (user as ExtendedXProfile).id);
 });
 
 // minimal deserialization; same reasoning as serializeUser
