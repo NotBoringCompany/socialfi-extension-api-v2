@@ -1,7 +1,9 @@
 package api_wonderbits
 
-import "socialfi-extension-api-v2/models"
+func CreateRaft(userID string) error {
 
-func CreateRaft(userID string) models.APIResponse {
+}
+
+func LatestRaftID() (uint, error) {
 
 }
