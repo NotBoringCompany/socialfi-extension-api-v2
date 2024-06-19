@@ -14,6 +14,9 @@ RUN npm run build
 
 FROM node:22.3-alpine3.19
 
+# Install CA certificates
+RUN apk update && apk add --no-cache ca-certificates
+
 WORKDIR /usr/src/app/ts-services
 
 # copy from built application and node_modules from builder stage

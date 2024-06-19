@@ -12,6 +12,9 @@ RUN cargo install --path .
 # use a smaller base image for the runtime (with a compatible glibc version)
 FROM debian:bookworm-slim
 
+# Install CA certificates
+RUN apt-get update && apt-get install -y ca-certificates && update-ca-certificates && rm -rf /var/lib/apt/lists/*
+
 # set working directory for runtime stage
 WORKDIR /usr/local/bin
 

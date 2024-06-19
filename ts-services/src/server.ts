@@ -1,6 +1,5 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
-import mongoose from 'mongoose';
 import passport from 'passport';
 import cors from 'cors';
 import session from 'express-session';
@@ -8,9 +7,7 @@ import session from 'express-session';
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3000;
-const wonderbitsMongoURI = process.env.WONDERBITS_MONGO_URI!;
-const wonderverseMongoURI = process.env.WONDERVERSE_MONGO_URI!;
+const port = process.env.PORT! || 3000;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -28,7 +25,4 @@ app.use(passport.session());
 
 app.listen(port, async () => {
     console.log(`Server running on port ${port}`);
-
-    await mongoose.connect(wonderbitsMongoURI);
-    await mongoose.connect(wonderverseMongoURI);
 });

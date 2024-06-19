@@ -11,6 +11,9 @@ COPY . .
 
 FROM python:3.12.4-slim
 
+# Install CA certificates
+RUN apt-get update && apt-get install -y ca-certificates && update-ca-certificates && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /usr/src/app/py-services
 
 # copy installed dependencies from builder stage
