@@ -10,6 +10,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
+// Initializes a MongoDB client instance.
 func InitMongo() *mongo.Client {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
@@ -37,6 +38,6 @@ func InitMongo() *mongo.Client {
 }
 
 var (
-	WonderbitsDB  *mongo.Database = InitMongo().Database("Wonderbits")
-	WonderverseDB *mongo.Database = InitMongo().Database("Wonderverse")
+	WonderbitsDB  *mongo.Database = InitMongo().Database("Wonderbits")  // MongoDB database for Wonderbits
+	WonderverseDB *mongo.Database = InitMongo().Database("Wonderverse") // MongoDB database for Wonderverse
 )
