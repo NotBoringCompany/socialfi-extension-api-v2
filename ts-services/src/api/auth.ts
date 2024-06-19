@@ -1,4 +1,4 @@
-import { APIResponse, APIResponseStatus } from '../utils/api';
+import { APIResponse, APIResponseStatus } from '../models/api';
 import { generateObjectID } from '../utils/crypto';
 import { ExtendedXProfile } from '../utils/customProfiles';
 import { UserModel } from '../utils/db';
