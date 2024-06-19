@@ -2,9 +2,12 @@
  * Represents a response result/return value from an API endpoint or inheriting functions.
  */
 export interface APIResponse {
+    /** the response status */
     status: APIResponseStatus,
+    /** any additional message to support the status reason */
     message: string,
-    data: any
+    /** any additional data if needed */
+    data?: any
 }
 
 /**

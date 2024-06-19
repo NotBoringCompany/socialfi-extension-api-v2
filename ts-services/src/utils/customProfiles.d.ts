@@ -1,6 +1,6 @@
-import { Profile as TwitterProfile } from '@superfaceai/passport-twitter-oauth2';
+import { Profile as XProfile } from '@superfaceai/passport-twitter-oauth2';
 
-export interface ExtendedTwitterProfile extends TwitterProfile {
+export interface ExtendedXProfile extends XProfile {
     photos?: {
         value: string;
     }[];

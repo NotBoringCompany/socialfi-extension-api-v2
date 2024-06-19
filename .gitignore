@@ -3,7 +3,6 @@ ts-services/node_modules/
 ts-services/dist/
 ts-services/.env
 
-### Python
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
