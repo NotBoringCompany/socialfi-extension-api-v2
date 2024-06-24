@@ -47,9 +47,9 @@ passport.deserializeUser(async (id: string, done) => {
         profileUrl: '',
         provider: '',
         displayName: '',
-        twitterAccessToken: '',
-        twitterRefreshToken: '',
-        twitterExpiryDate: 0
+        xAccessToken: '',
+        xRefreshToken: '',
+        xExpiryDate: 0
     }
 
     done(null, user);
