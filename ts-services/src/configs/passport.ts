@@ -1,13 +1,13 @@
 import passport from 'passport';
-import { ProfileWithMetaData, Strategy as TwitterStrategy } from '@superfaceai/passport-twitter-oauth2';
+import { ProfileWithMetaData, Strategy as XStrategy } from '@superfaceai/passport-twitter-oauth2';
 import { ExtendedXProfile } from '../utils/customProfiles';
 
-passport.use(new TwitterStrategy(
+passport.use(new XStrategy(
     {
         clientType: 'confidential',
-        clientID: process.env.TWITTER_CLIENT_ID!,
-        clientSecret: process.env.TWITTER_CLIENT_SECRET!,
-        callbackURL: process.env.TWITTER_CALLBACK_URL!,
+        clientID: process.env.X_CLIENT_ID!,
+        clientSecret: process.env.X_CLIENT_SECRET!,
+        callbackURL: process.env.X_CALLBACK_URL!,
         authorizationURL: 'https://x.com/i/oauth2/authorize',
         scope: ['tweet.read', 'users.read', 'offline.access'],
     },
@@ -20,10 +20,10 @@ passport.use(new TwitterStrategy(
         try {
             const user: Express.User = {
                 ...profile,
-                twitterAccessToken: accessToken,
-                twitterRefreshToken: refreshToken,
+                xAccessToken: accessToken,
+                xRefreshToken: refreshToken,
                 // get the current unix timestamp, add 7200 seconds (2 hours) to it
-                twitterExpiryDate: Math.floor(Date.now() / 1000) + 7200,
+                xExpiryDate: Math.floor(Date.now() / 1000) + 7200,
             }
 
             return done(null, user);
