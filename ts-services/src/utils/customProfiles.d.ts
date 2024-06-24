@@ -4,7 +4,7 @@ export interface ExtendedXProfile extends XProfile {
     photos?: {
         value: string;
     }[];
-    twitterAccessToken: string;
-    twitterRefreshToken: string;
-    twitterExpiryDate: number;
+    xAccessToken: string;
+    xRefreshToken: string;
+    xExpiryDate: number;
 }
